@@ -4,7 +4,7 @@ CONFIG=$1
 GPUS=$2
 NNODES=${NNODES:-1}
 NODE_RANK=${NODE_RANK:-0}
-PORT=${PORT:-29500}
+PORT=${PORT:-29505}
 MASTER_ADDR=${MASTER_ADDR:-"127.0.0.1"}
 
 # Set the CUDA_VISIBLE_DEVICES to the specified GPUs (GPUS should be a comma-separated string, e.g. "0,2,3")
@@ -16,7 +16,7 @@ echo "Using GPUs: $CUDA_VISIBLE_DEVICES"
 NUM_GPUS=$(echo $GPUS | tr ',' '\n' | wc -l)
 
 PYTHONPATH="$(dirname $0)/..":$PYTHONPATH \
-nohup python3 -m torch.distributed.run \
+nohup python3 -m torch.distributed.launch \
     --nnodes=$NNODES \
     --node_rank=$NODE_RANK \
     --master_addr=$MASTER_ADDR \

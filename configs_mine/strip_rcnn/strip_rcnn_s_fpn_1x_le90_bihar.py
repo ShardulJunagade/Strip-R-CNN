@@ -1,10 +1,10 @@
 _base_ = [
-    '../_base_/datasets/dotav1.py', '../_base_/schedules/schedule_1x.py',
+    '../_base_/datasets/bihar.py', '../_base_/schedules/schedule_1x.py',
     '../_base_/default_runtime.py'
 ]
 
 angle_version = 'le90'
-gpu_number = 8
+# gpu_number = 8
 # fp16 = dict(loss_scale='dynamic')
 model = dict(
     type='StripRCNN',

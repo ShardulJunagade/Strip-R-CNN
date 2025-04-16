@@ -1,6 +1,6 @@
 # dataset settings
 dataset_type = 'BrickKilnDataset'
-data_root = 'data/brickkilns/' 
+data_root = '/home/shardul.junagade/my-work/domain-adaptation-brick-kilns/data/' 
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -32,16 +32,16 @@ data = dict(
     workers_per_gpu=4,
     train=dict(
         type=dataset_type,
-        ann_file=data_root + 'trainval/annfiles/',
-        img_prefix=data_root + 'trainval/images/',
+        ann_file=data_root + 'bihar_same_class_count_10_120_1000/annfiles/',
+        img_prefix=data_root + 'bihar_same_class_count_10_120_1000/images_png/',
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
-        ann_file=data_root + 'val/annfiles/',
-        img_prefix=data_root + 'val/images/',
+        ann_file=data_root + 'bihar_same_class_count_10_120_1000/annfiles/',
+        img_prefix=data_root + 'bihar_same_class_count_10_120_1000/images_png/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
-        ann_file=data_root + 'test/images/',
-        img_prefix=data_root + 'test/images/',
+        ann_file=data_root + 'test_bihar_same_class_count_10_120_1000/images_png/',
+        img_prefix=data_root + 'test_bihar_same_class_count_10_120_1000/images_png/',
         pipeline=test_pipeline))
