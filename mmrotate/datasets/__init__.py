@@ -7,4 +7,8 @@ from .sar import SARDataset  # noqa: F401, F403
 from .fair import FairDataset
 from .dota_1_5 import DOTADataset15
 from .dior import DIORDataset
-__all__ = ['SARDataset','DIORDataset', 'DOTADataset', 'DOTAv15Dataset', 'DOTAv2Dataset', 'build_dataset', 'HRSCDataset', 'FairDataset', 'DOTADataset15']
+
+from .brickkiln import BrickKilnDataset
+
+__all__ = ['SARDataset','DIORDataset', 'DOTADataset', 'DOTAv15Dataset', 'DOTAv2Dataset', 'build_dataset', 'HRSCDataset', 'FairDataset', 'DOTADataset15', 
+           'BrickKilnDataset']
